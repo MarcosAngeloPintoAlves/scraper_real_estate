@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.common import exceptions
 import pandas as pd
 from datetime import date
+import time
 
 options = webdriver.ChromeOptions() 
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
@@ -10,12 +11,12 @@ options.add_argument("disable-infobars")
 options.add_argument("start-maximized")
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36")
 
-#input de características do link
-cidade = str(input('Deseja olhar casas de qual cidade? '))
-estado = str(input('Essa UF do país se encontra a cidade? Digite a sigla em letras minúsculas: sp, rj, minas-gerais, etc: '))
-tipo_imovel = str(input('Qual o tipo do imóvel? Lista: casa, apartamento, condominio ou chacara:' ))
-transacao = str(input('Compra ou aluguel de imoveis? Lista: venda e aluguel: '))
-pages = int(input('Quantas páginas de dados deseja? Cada página contém cerca de 30 registros: '))
+#input de características do imóvel
+cidade = str(input('Deseja olhar casas de qual cidade?'))
+estado = str(input('Essa UF do país se encontra a cidade? Digite a sigla em letras minúsculas: sp, rj, minas-gerais, etc:'))
+tipo_imovel = str(input('Qual o tipo do imóvel? Lista: casa, apartamento, condominio ou chacara:'))
+transacao = str(input('Compra ou aluguel de imoveis? Lista: venda e aluguel:'))
+pages = int(input('Quantas páginas de dados deseja? Cada página contém cerca de 30 registros:'))
 
 driver = webdriver.Chrome(options=options)
 
@@ -74,7 +75,7 @@ for i in range(1, pages+1):
                 pass
         else:
             pass
-        #time.sleep(10)
+        time.sleep(10)
     except exceptions.StaleElementReferenceException:
         pass
 
