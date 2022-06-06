@@ -37,4 +37,4 @@ As colunas da tabela final são:
 
 Melhorias futuras: coluna com o link do imóvel redirecionando para o site e criação de diretório contendo imagens do imóvel;
 
-**Disclaimers: registros de aluguel e venda virão misturados em alguns casos por conta da listagem no Viva Real.
+**Disclaimers**: registros de aluguel e venda virão misturados em alguns casos por conta da listagem no Viva Real.
